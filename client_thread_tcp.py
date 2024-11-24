@@ -2,8 +2,6 @@
 import socket
 from threading import Thread
 
-global tcp_con
-
 def receber():
     global tcp_con
     while True:

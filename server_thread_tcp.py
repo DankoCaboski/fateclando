@@ -2,8 +2,6 @@
 import socket
 from threading import Thread
 
-global tcp_con
-
 def enviar():
     global tcp_con
     msg = input()

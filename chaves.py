@@ -13,21 +13,18 @@ os.makedirs(end)
 
 public_key, private_key = rsa.newkeys(int(size))
 
-##crio o arquivo pub
-public = end + '/Pub.txt'
-#codifico o exponente e modulo da chave para o formate PEM
+## crio o arquivo pub
+public = end + '/pub.txt'
 arq = open(public,'w')
+## codifico o exponente e modulo da chave para o formate PEM
 arq.write(str(public_key._save_pkcs1_pem()))
 arq.close()
 
-##crio o arquivo pri
-private = end + '/Pri.txt' 
+## crio o arquivo pri
+private = end + '/pri.txt' 
 arq = open(private,'w')
-
-##codifico o exponente e modulo da chave para o formate PEM
+## codifico o exponente e modulo da chave para o formate PEM
 arq.write(str(private_key._save_pkcs1_pem()))
 arq.close()
 
 print('Chaves geradas com sucesso')
-print(public)
-print(private)

@@ -5,11 +5,11 @@ end = os.getcwd() + '/kyes'
 counter = 1
 original_end = end
 
-while os.path.exists(end):
-    end = f"{original_end}_{counter}"
-    counter += 1
-
-os.makedirs(end)
+if os.path.exists(end):
+    os.remove(end + '/pub.txt')
+    os.remove(end + '/pri.txt')
+else:
+    os.makedirs(end)
 
 public_key, private_key = rsa.newkeys(int(size))
 
